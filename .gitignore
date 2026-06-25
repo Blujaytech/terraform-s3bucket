@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Terraform plans
+*.tfplan
+
+# IDE
+.vscode/
+.idea/
+
+# Vim swap files
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
