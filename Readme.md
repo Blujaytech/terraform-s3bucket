@@ -93,16 +93,26 @@ Use the correct bucket name:
 ```
 Apply Bucket Policy
 ```
-aws s3api put-bucket-policy \
-  --bucket blujaytech-devops-demo \
-  --policy file://bucket-policy.json
+aws s3api put-bucket-policy --bucket blujaytech-devops-demo1 --policy file://bucket-policy.json
 ```
 Purpose: Allows public read access to objects in the bucket.
 
 Verify Bucket Policy
 ```
-aws s3api get-bucket-policy \
-  --bucket blujaytech-devops-demo
+aws s3api get-bucket-policy --bucket blujaytech-devops-demo
+```
+Enable Public Access to Check S3-Bucket Content
+```
+aws s3api put-public-access-block --bucket blujaytech-devops-demo --public-access-block-configuration BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false
+```
+```
+aws s3api get-public-access-block --bucket blujaytech-devops-demo
+```
+```
+aws s3api put-bucket-policy --bucket blujaytech-devops-demo --policy file://bucket-policy.json
+```
+```
+aws s3 cp index.html s3://blujaytech-devops-demo
 ```
 Purpose: Displays the currently applied bucket policy.
 
