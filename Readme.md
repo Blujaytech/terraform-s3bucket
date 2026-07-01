@@ -140,10 +140,8 @@ Access our s3-Bucket content.
 ```
 https://us-east-1.console.aws.amazon.com/s3/buckets?region=us-east-1
 ```
------s3 bucket delete-process----------
-
+# s3 bucket delete-process
 This helps confirm the file was updated successfully.
-
 Check Whether Versioning is Enabled
 ```
 aws s3api get-bucket-versioning \
