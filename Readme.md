@@ -1,3 +1,7 @@
+# Tech-Stack
+
+1. Take any server in aws console [or] run in Command Prompt also.
+
 AWS S3 End-to-End Using AWS CLI
 
 Step 1: Verify AWS CLI Installation
