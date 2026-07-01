@@ -165,36 +165,30 @@ aws s3api list-object-versions \
 If versioning is enabled:
 ```
 aws s3api list-object-versions \
-  --bucket blujaytech-devops-demo \
-| jq -r '.Versions[] | "\(.Key) \(.VersionId)"' \
-| while read key version; do
-    aws s3api delete-object \
-      --bucket blujaytech-devops-demo \
-      --key "$key" \
-      --version-id "$version"
-```
+--bucket blujaytech-devops-demo1 \
+--query 'Versions[].{Key:Key,VersionId:VersionId}' \
+--output text \
+| while read key version
+do
+aws s3api delete-object \
+--bucket blujaytech-devops-demo1 \
+--key "$key" \
+--version-id "$version"
 done
-
-Purpose: Deletes every version of every object in the bucket.
-
-Delete Delete Markers
+{
+    "VersionId": "null"
+}
 
 ```
-aws s3api list-object-versions \
-  --bucket blujaytech-devops-demo \
-| jq -r '.DeleteMarkers[] | "\(.Key) \(.VersionId)"' \
-| while read key version; do
-    aws s3api delete-object \
-      --bucket blujaytech-devops-demo \
-      --key "$key" \
-      --version-id "$version"
-```
-
 Purpose: Removes delete markers left by versioned deletions.
 
 Delete the Bucket
 ```
 aws s3 rb s3://blujaytech-devops-demo
+```
+check s3 bucket
+```
+aws s3 ls
 ```
 
 
