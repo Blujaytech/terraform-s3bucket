@@ -1,6 +1,6 @@
 # Tech-Stack
 
-1. Take any server in aws console [or] run in Command Prompt also.
+1. Take any OS in aws console [RHEL,Centos,Amezon Linux].
 
 AWS-S3 End-to-End Using AWS CLI
 
