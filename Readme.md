@@ -186,6 +186,9 @@ Delete the Bucket
 ```
 aws s3 rb s3://blujaytech-devops-demo
 ```
+```
+aws s3api delete-bucket --bucket blujaytech-devops-demo1
+```
 check s3 bucket
 ```
 aws s3 ls
